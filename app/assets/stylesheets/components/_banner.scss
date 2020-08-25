@@ -1,0 +1,36 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-gradient {
+  background-color: $color-3;
+  color: $color-1;
+  padding: 16px 32px;
+  border-radius: 24px;
+  font-weight: bold;
+  background-color: $color-3;
+  transition: background 0.3s ease;
+  border: none;
+}
+
+.btn-gradient:hover {
+  background-color: $color-1;
+  color: $color-3;
+}
