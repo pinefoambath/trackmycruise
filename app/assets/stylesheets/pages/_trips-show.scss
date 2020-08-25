@@ -1,0 +1,31 @@
+.map-show-trips {
+    display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+
+.info-show-trips {
+    display: flex;
+    text-align: right;
+    margin: 0px;
+    ul {
+        border: floor($number: 2);
+        list-style-type: none;
+        text-align: right;
+    }
+}
+.btn-flat {
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: #1EDD88;
+    transition: 0.3s ease;
+    background-color: green;
+    border: 1px solid #0F60C4;
+  }
+  
+  .btn-flat:hover {
+    background: #1BCB7F;
+    color: white;
+  }
