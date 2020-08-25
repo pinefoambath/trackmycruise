@@ -24,7 +24,9 @@ require("channels")
 
 // External imports
 import "bootstrap";
-
+$(function () {
+  $('[data-toggle="popover"]').popover({html: true})
+})
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -32,3 +34,20 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+// $(function () {
+//   $('#social-media-popover').popover({
+//     container: 'body',
+//     html: 'true',
+//     content: '<div><img width="25px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT69F22uXgbwgFnNQmXL3ZQFQOKCnAWZoVr0Q&usqp=CAU"/></div>'
+//   })
+// })
+// $(document).ready(function() {
+//   $("#social-media-popover").popover({
+//       placement: 'bottom',
+//       html: 'true',
+//       title: '<span><strong>title</strong></span>'+
+//               '<button type="button" id="close" onclick="$(&quot;#example&quot;).popover(&quot;hide&quot;);">&times;</button>',
+//       content: 'test'
+//   });
+// });
