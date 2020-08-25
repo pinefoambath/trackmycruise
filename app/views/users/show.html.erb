@@ -12,7 +12,8 @@
             <p>Wind gusts: <b><%= trip.wind_gusts %></b></p>
             <p>Air temperature: <b><%= trip.air_temperature %></b></p>
             <p>Sea temperature: <b><%= trip.sea_temperature %></b></p>
-            <p>Logbook entry: <b><%= trip.description %></b></p>
+            <p>Logbook entry: <b><%= trip.description %></b> <%= link_to "edit logbook entry", edit_trip_path(trip) %></p>
+
           </div>
         <% end %>
     <% else %>
