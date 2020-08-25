@@ -45,4 +45,5 @@ class TripsController < ApplicationController
       params.require(:trip).permit(:date, :time, :longitude, :latitude, :wave_length, :wave_height, :air_temperature, :sea_temperature, :wind_speed, :wind_direction, :description)
     end
 
+
 end
