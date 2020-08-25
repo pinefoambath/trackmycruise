@@ -1,1 +1,57 @@
 // Specific CSS for your home-page
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: $color-2;
+}
+.container {
+    flex: 1;    /* same as flex-grow: 1; */
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.text-card {
+  text-align: center;
+  color: $color-1;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .info-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .info-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .info-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+

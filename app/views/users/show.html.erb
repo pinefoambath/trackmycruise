@@ -1,1 +1,31 @@
-<h1> This is show page </h1>
+
+
+
+<h1>My trips</h1>
+<div class="container">
+  <div class="all_trip">
+    <% if @user.trips.size > 0 %>
+        <% @user.trips.each do |trip| %>
+          <div class="trip_data">
+            <p>Date: <b><%= trip.date %></b></p>
+            <p>Location longitude and latitude <b><%= trip.longitude %></b>,<b><%= trip.latitude %></b></p>
+            <p>Wave height: <b><%= trip.wave_height %></b></p>
+            <p>Wave length: <b><%= trip.wave_length %></b></p>
+            <p>Wind speed: <b><%= trip.wind_speed %></b></p>
+            <p>Wind gusts: <b><%= trip.wind_gusts %></b></p>
+            <p>Air temperature: <b><%= trip.air_temperature %></b></p>
+            <p>Sea temperature: <b><%= trip.sea_temperature %></b></p>
+            <p>Logbook entry: <b><%= trip.description %></b> <%= link_to "edit logbook entry", edit_trip_path(trip) %></p>
+
+          </div>
+        <% end %>
+    <% else %>
+        <p>You've not logged any trips yet.</p>
+    <% end %>
+  </div>
+
+
+</div>
+
+
+
