@@ -16,7 +16,15 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
+$('.popover-markup>.trigger').popover({
+  html: true,
+  title: function () {
+      return $(this).parent().find('.head').html();
+  },
+  content: function () {
+      return $(this).parent().find('.content').html();
+  }
+});
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
