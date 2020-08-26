@@ -1,0 +1,19 @@
+.map_new {
+  display: flex;
+  width: 800px;
+  height: 650px;
+  background-color: $color-2;
+  color: white;
+}
+
+.new_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.select_data {
+  background-color: $color-3;
+  color: white;
+  width: 800px;
+  height: 650px;
+}
