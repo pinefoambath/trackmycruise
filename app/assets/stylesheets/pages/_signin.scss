@@ -1,14 +1,13 @@
 .sign-in-container {
   margin: 24px;
   padding: 16px;
-  // margin: 5px 0 12px 0;
   border: none;
   background: #f1f1f1;
   text-align:center;
 
 }
 
-.btn {
+.sign-up-btn {
   background-color: blue;
   color: white;
   padding: 16px 20px;
@@ -17,7 +16,7 @@
   width: 100%;
   opacity: 0.9;
   }
-.btn:hover {
+.sign-up-btn:hover {
   opacity: 1;
 
 }
