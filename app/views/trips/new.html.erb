@@ -1,3 +1,52 @@
+<h1>Fetch my Weather</h1>
+
+
+<div class="new_container">
+  <div class="map_new">
+    <p>This is where the map goes</p>
+  </div>
+  <div class="select_data">
+    <p> Select a location on the map to the left, and pick a date and time below: <p>
+    <%= simple_form_for @trip do |f| %>
+      <%= f.input :longitude, as: :hidden %>
+      <%= f.input :latitude, as: :hidden %>
+      <%= f.input :date %>
+      <%= f.input :time %>
+      <div class="btn" id="getweather">Get My Weather</div>
+      <%= f.input :wave_height %>
+      <%= f.input :wave_length %>
+      <%= f.input :wind_speed %>
+      <%= f.input :wind_gusts %>
+      <%= f.input :air_temperature%>
+      <%= f.input :sea_temperature %>
+      <%= f.button :submit, class: "btn-primary" %>
+    <% end %>
+  </div>
+
+</div>
+
+<!--
+ <div class="container">
+    <div class="card card-white">
+      <select id="city-input" class="select2"></select>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city"> -->
+        <!-- <input type="submit" value="Submit" id="button" width=200px> -->
+    <!-- </div> -->
+
+
+
+    <!-- <div class="card card-white"> -->
+      <!-- <h1 id="header">Weather in</h1>
+      <h2 id="date">Thursday, 6th August</h2>
+      <p id="condition"></p>
+       -->
+       <!-- <div id="bottom-row"> -->
+        <!-- <img id="weathericon"> -->
+        <!-- <h2 id="temperature"></h2> -->
+      <!-- </div> -->
+    <!-- </div> -->
+
 <div class="container">
 
   <div id="map"
@@ -8,3 +57,4 @@
   <pre id="coordinates" class="coordinates"></pre>
 
 </div>
+
