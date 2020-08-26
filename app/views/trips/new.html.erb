@@ -46,3 +46,15 @@
         <!-- <h2 id="temperature"></h2> -->
       <!-- </div> -->
     <!-- </div> -->
+
+<div class="container">
+
+  <div id="map"
+       style="width: 100%; height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <pre id="coordinates" class="coordinates"></pre>
+
+</div>
+

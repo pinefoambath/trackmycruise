@@ -1,0 +1,9 @@
+<h5>Edit this trip's logbook entry</h5>
+<p>Current entry:</p>
+<%= trip.description %>
+<p>Update:</p>
+<%= form_for(trip) do |f| %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.submit %>
+<% end %>
