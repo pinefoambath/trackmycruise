@@ -1,5 +1,5 @@
 meta_product_name: "Track My Cruise"
 meta_title: "Track My Cruise - THE retrospective weather logging app"
 meta_description: "Get historical weather data for all your adventures."
-meta_image: "trackMyCruise.png" # should exist in `app/assets/images/`
+meta_image: "compass.jpg" # should exist in `app/assets/images/`
 twitter_account: "@twitter"   # required for Twitter Cards
