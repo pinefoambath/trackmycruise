@@ -5,7 +5,7 @@
         <% @user.trips.each do |trip| %>
             <div class="card" style="width: 18rem;">
               <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
-              <div class="card-body"> 
+              <div class="card-body">
                 <p>Date: <b><%= trip.date %></b></p>
                 <p>Location longitude and latitude <b><%= trip.longitude %></b>,<b><%= trip.latitude %></b></p>
                 <p>Wave height: <b><%= trip.wave_height %></b></p>
@@ -14,10 +14,11 @@
                 <p>Wind gusts: <b><%= trip.wind_gusts %></b></p>
                 <p>Air temperature: <b><%= trip.air_temperature %></b></p>
                 <p>Sea temperature: <b><%= trip.sea_temperature %></b></p>
+                <p>Logbook entry: <b><%= trip.description %></b></p>
 
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-<%=trip.id %>">
                    Add To Logbook
-                </button>  
+                </button>
             </div>
           </div>
           <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -34,7 +35,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  
+
                 </div>
               </div>
             </div>
