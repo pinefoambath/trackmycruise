@@ -1,9 +1,5 @@
-<h5> </h5>
-
-<%= trip.description %>
-<p>Update:</p>
 <%= form_for(trip) do |f| %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+  <%= f.text_area :description, :input_html => {:rows => 10}  %>
   <%= f.submit %>
 <% end %>
+x
