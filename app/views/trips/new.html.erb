@@ -12,7 +12,7 @@
       <%= f.input :latitude, as: :hidden %>
       <%= f.input :date %>
       <%= f.input :time %>
-      <div class="btn" id="getweather">Get My Weather</div>
+      <btn class="btn" id="getweather" data-stormglass-api-key="<%= ENV['STORMGLASS_API_KEY'] %>">Get My Weather!!!</btn>
       <%= f.input :wave_height %>
       <%= f.input :wave_length %>
       <%= f.input :wind_speed %>
