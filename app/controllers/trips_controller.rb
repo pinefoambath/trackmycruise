@@ -1,4 +1,4 @@
-class TripsController < ApplicationController 
+class TripsController < ApplicationController
 
   def index
     @trips = Trip.all
@@ -16,7 +16,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(strong_params)
     @trip.user = current_user
     if @trip.save
-      redirect_to user_path(@user)
+      redirect_to root_path
     else
       render :new
     end

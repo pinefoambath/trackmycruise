@@ -3,16 +3,26 @@
 
 <div class="new_container">
   <div class="map_new">
-    <p>This is where the map goes</p>
+    <div class="container">
+
+  <div id="map"
+       style="width: 100%; height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <pre id="coordinates" class="coordinates"></pre>
+
+</div>
   </div>
   <div class="select_data">
-    <p> Select a location on the map to the left, and pick a date and time below: <p>
+    <p> 1) Select a location on the map to the left, 2) pick a date and time: <p>
     <%= simple_form_for @trip do |f| %>
-      <%= f.input :longitude, as: :hidden %>
-      <%= f.input :latitude, as: :hidden %>
       <%= f.input :date %>
       <%= f.input :time %>
+      <p>3) Click Get My Weather and we'll get your location and weather data:</p>
       <btn class="btn" id="getweather" data-stormglass-api-key="<%= ENV['STORMGLASS_API_KEY'] %>">Get My Weather!!!</btn>
+       <%= f.input :longitude %>
+      <%= f.input :latitude %>
       <%= f.input :wave_height %>
       <%= f.input :wave_length %>
       <%= f.input :wind_speed %>
@@ -24,6 +34,7 @@
   </div>
 
 </div>
+
 
 <!--
  <div class="container">
@@ -47,14 +58,4 @@
       <!-- </div> -->
     <!-- </div> -->
 
-<div class="container">
-
-  <div id="map"
-       style="width: 100%; height: 600px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <pre id="coordinates" class="coordinates"></pre>
-
-</div>
 

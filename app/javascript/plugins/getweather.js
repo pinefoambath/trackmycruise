@@ -9,6 +9,8 @@ const displayinfo = (data) => {
   const wind_gusts = document.getElementById('trip_wind_gusts');
   const air_temperature = document.getElementById('trip_air_temperature');
   const sea_temperature = document.getElementById('trip_sea_temperature');
+  const long = document.getElementById('trip_longitude');
+  const lat = document.getElementById('trip_latitude');
 
 
 
@@ -18,7 +20,8 @@ const displayinfo = (data) => {
   wind_gusts.value = data.hours[0].gust.noaa;
   air_temperature.value = data.hours[0].airTemperature.noaa;
   sea_temperature.value = data.hours[0].waterTemperature.noaa;
-
+  lat.value = localStorage.latitude;
+  long.value = localStorage.longitude;
 };
 
 const getweatherdata = () => {
@@ -28,8 +31,8 @@ const getweatherdata = () => {
     stormglassid.addEventListener('click', (event) => {
       console.log(stormglassid.dataset.stormglassApiKey);
       console.log(event.currentTarget);
-      const latitude = 48.000000;
-      const longitude = -11.000000;
+      const latitude = localStorage.latitude
+      const longitude = localStorage.longitude
       const day = document.getElementById('trip_date_3i');
       const month = document.getElementById('trip_date_2i');
       const year = document.getElementById('trip_date_1i');
