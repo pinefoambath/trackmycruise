@@ -1,8 +1,8 @@
 <h1>My trips</h1>
 <div class="container">
-  <div class="all_trip">
+  <div class="all_trip ">
     <% if @user.trips.size > 0 %>
-        <% @user.trips.each do |trip| %>
+        <% @user.trips.order(created_at: :asc).each do |trip| %>
             <div class="card" style="width: 18rem;">
               <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
               <div class="card-body">
@@ -17,15 +17,15 @@
                 <p>Logbook entry: <b><%= trip.description %></b></p>
 
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-<%=trip.id %>">
-                   Add To Logbook
+                   Update
                 </button>
-            </div>
+            </div> 
           </div>
           <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-centered boardal" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalCenterTitle">Edit this trip's logbook entry</h5>
+                  <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>

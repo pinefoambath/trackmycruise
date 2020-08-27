@@ -7,5 +7,12 @@
 
 .all_trip {
   display: flex;
-
+  column-gap: 5px;
+}
+.card {
+  border-radius: 20px;
+  justify-content: space-between;
+  
+  display: flex;
+  justify-content: space-between;
 }
