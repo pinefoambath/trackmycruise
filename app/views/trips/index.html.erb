@@ -1,0 +1,49 @@
+<div class="container index-text">
+  <div class="py-5">
+    <h1>My trips</h1>
+  </div>
+  <div class="all_trip">
+    <% if @user.trips.size > 0 %>
+        <% @user.trips.each do |trip| %>
+            <div class="card" style="width: 18rem;">
+              <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
+              <div class="card-body">
+                <p>Date: <b><%= trip.date %></b></p>
+                <p>Location longitude and latitude <b><%= trip.longitude %></b>,<b><%= trip.latitude %></b></p>
+                <p>Wave height: <b><%= trip.wave_height %></b></p>
+                <p>Wave length: <b><%= trip.wave_length %></b></p>
+                <p>Wind speed: <b><%= trip.wind_speed %></b></p>
+                <p>Wind gusts: <b><%= trip.wind_gusts %></b></p>
+                <p>Air temperature: <b><%= trip.air_temperature %></b></p>
+                <p>Sea temperature: <b><%= trip.sea_temperature %></b></p>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-<%=trip.id %>">
+                   Add To Logbook
+                </button>
+            </div>
+          </div>
+          <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Your comentary of the day</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <%= render "trips/edit", trip: trip  %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    <% else %>
+        <p>You've not logged any trips yet.</p>
+    <% end %>
+  </div>
+</div>

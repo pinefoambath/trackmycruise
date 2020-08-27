@@ -1,0 +1,17 @@
+.btn-gradient {
+  background-color: $color-3;
+  color: $color-1;
+  padding: 12px 32px;
+  border-radius: 24px;
+  font-weight: bold;
+  background-color: $color-3;
+  transition: background 0.3s ease;
+  border: none;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.btn-gradient:hover {
+  background-color: $color-1;
+  color: $color-3;
+}
