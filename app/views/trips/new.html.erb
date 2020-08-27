@@ -17,7 +17,7 @@
   <div class="select_data">
     <p> 1) Select a location on the map to the left, 2) pick a date and time: <p>
     <%= simple_form_for @trip do |f| %>
-      <%= f.input :date %>
+      <%= f.input :date, start_year: Date.today.year - 3, end_year: Date.today.year %>
       <%= f.input :time %>
       <p>3) Click Get My Weather and we'll get your location and weather data:</p>
       <btn class="btn" id="getweather" data-stormglass-api-key="<%= ENV['STORMGLASS_API_KEY'] %>">Get My Weather!!!</btn>
