@@ -17,7 +17,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(strong_params)
     @trip.user = current_user
     if @trip.save
-      redirect_to root_path
+      redirect_to trips_path
     else
       render :new
     end
@@ -27,7 +27,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @user = @trip.user
     @trip.destroy
-     redirect_to user_path
+     redirect_to trips_path
   end
 
   def edit
@@ -37,7 +37,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     @trip.update(strong_params)
-    redirect_to user_path
+    redirect_to trips_path
   end
 
   private
