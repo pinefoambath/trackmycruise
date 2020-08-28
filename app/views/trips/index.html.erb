@@ -1,32 +1,36 @@
 <div class="container index-text">
-  <div class="py-5">
+  <div class="pt-5">
     <h1>My trips</h1>
   </div>
-  <div class="all_trip">
+  <div class="all_trip mt-0">
     <% if @user.trips.size > 0 %>
-        <% @user.trips.each do |trip| %>
-            <div class="card" style="width: 18rem;">
+        <% @user.trips.order(created_at: :asc).each do |trip| %>
+            <div class="card m-4">
               <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
-              <div class="card-body">
+              <div class="card-body" id="my-trip-card">
                 <p>Date: <b><%= trip.date %></b></p>
                 <p>Location longitude and latitude <b><%= trip.longitude %></b>,<b><%= trip.latitude %></b></p>
                 <p>Wave height: <b><%= trip.wave_height %></b></p>
                 <p>Wave length: <b><%= trip.wave_length %></b></p>
                 <p>Wind speed: <b><%= trip.wind_speed %></b></p>
-                <p>Wind gusts: <b><%= trip.wind_gusts %></b></p>
                 <p>Air temperature: <b><%= trip.air_temperature %></b></p>
                 <p>Sea temperature: <b><%= trip.sea_temperature %></b></p>
-
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-<%=trip.id %>">
-                   Add To Logbook
-                </button>
+                <p>Logbook entry: <b><%= trip.description %></b></p>
+                <div class="button-update text-center">
+                  <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modal-<%=trip.id %>">
+                     Update
+                  </button>
+                </div>
+              </div>
+              <div class="delete-link text-center mb-2">
+                <%= link_to 'delete trip', trip_path(trip), method: :delete %>
+              </div>
             </div>
-          </div>
           <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-centered boardal" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalCenterTitle">Your comentary of the day</h5>
+                  <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
