@@ -1,5 +1,5 @@
 <div class="container">
- <h1> Weather history of the location  </h1> 
+ <h1> Weather history of the location  </h1>
   <p> From <%= @trip.date %> </p>
     <div class="subcontainer col-12">
         <div class="map-show-trips">
@@ -9,7 +9,7 @@
             <ul>
                 <h3> Weather parameters on <%= @trip.date %> </h3>
                 <li> Wind speed <%= @trip.wind_speed %>km/h and wind gusts <%= @trip.wind_gusts %>km/h  </li>
-                <li> Wave height <%= @trip.wave_height %> m. and wave length <%= @trip.wave_length %>m. </li>
+                <li> Wave height <%= @trip.wave_height %> m. and wave period <%= @trip.wave_length %>m. </li>
                 <li> Air temperature <%= @trip.air_temperature %> °C and water teperature <%= @trip.sea_temperature %>°C </li>
             </ul>
         </div>

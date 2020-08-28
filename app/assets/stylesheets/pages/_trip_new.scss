@@ -10,11 +10,26 @@
   display: flex;
   justify-content: space-around;
   height: 1300px;
+  margin-top: 24px;
+  margin-left: 24px;
 }
 
 .select_data {
   background-color: $color-3;
   color: white;
-  width: 800px;
+  width: 440px;
   height: 650px;
+}
+
+#map_header {
+  color: white;
+  text-align: centre;
+  margin-top: 8px;
+}
+
+#getweather {
+  color:white;
+  text-style: bold;
+  font-size: 150%;
+
 }

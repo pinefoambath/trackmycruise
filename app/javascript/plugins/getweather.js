@@ -12,12 +12,10 @@ const displayinfo = (data) => {
   const long = document.getElementById('trip_longitude');
   const lat = document.getElementById('trip_latitude');
 
-
-
   wave_height.value = data.hours[0].waveHeight.noaa;
   wave_length.value = data.hours[0].wavePeriod.noaa;
-  wind_speed.value = data.hours[0].windSpeed.noaa;
-  wind_gusts.value = data.hours[0].gust.noaa;
+  wind_speed.value = Math.round(data.hours[0].windSpeed.noaa*3.6);
+  wind_gusts.value = Math.round(data.hours[0].gust.noaa*3.6);
   air_temperature.value = data.hours[0].airTemperature.noaa;
   sea_temperature.value = data.hours[0].waterTemperature.noaa;
   lat.value = localStorage.latitude;
@@ -45,6 +43,7 @@ const getweatherdata = () => {
       .then((data) => {
         // console.log(data);
         displayinfo(data);
+        document.querySelector('.btn-primary').classList.remove('d-none');
         });
       })
   }
