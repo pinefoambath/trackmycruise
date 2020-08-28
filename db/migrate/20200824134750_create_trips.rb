@@ -12,6 +12,7 @@ class CreateTrips < ActiveRecord::Migration[6.0]
       t.integer :wind_direction
       t.integer :air_temperature
       t.integer :sea_temperature
+      t.integer :wind_gusts
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
