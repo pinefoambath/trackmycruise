@@ -10,14 +10,36 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10',
       center: [0, 0],
-      zoom: 2
+      zoom: 3
     });
 
+    // Add geolocate control to the map.
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true
+      })
+    );
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
+
+    // Add a draggable marker to the map.
     var marker = new mapboxgl.Marker({
       draggable: true
     })
       .setLngLat([localStorage.longitude, localStorage.latitude])
       .addTo(map);
+
+    map.on('movestart', function (e) {
+        console.log(`Current Map Center: ${map.getCenter()}`);
+        marker.setLngLat(map.getCenter());
+    });
+    map.on('moveend', function (e) {
+        console.log(`Current Map Center: ${map.getCenter()}`);
+        marker.setLngLat(map.getCenter());
+    });
 
     function onDragEnd() {
       var lngLat = marker.getLngLat();
