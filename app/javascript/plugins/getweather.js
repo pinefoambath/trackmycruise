@@ -44,6 +44,9 @@ const getweatherdata = () => {
         // console.log(data);
         displayinfo(data);
         document.querySelector('.btn-primary').classList.remove('d-none');
+        document.querySelector('.text-muted').classList.remove('d-none');
+        document.getElementById('trip_description').classList.remove('d-none');
+        // document.getElementById()
         });
       })
   }
