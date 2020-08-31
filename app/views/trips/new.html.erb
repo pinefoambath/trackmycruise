@@ -8,26 +8,25 @@
   <div class="map_new">
     <div class="container">
 
-  <div id="map"
-       style="width: 100%; height: 600px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <pre id="coordinates" class="coordinates"></pre>
+      <div id="map"
+           style="width: 100%; height: 600px;"
+           data-markers="<%= @markers.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <pre id="coordinates" class="coordinates"></pre>
 
-</div>
+    </div>
   </div>
   <div class="select_data container-fluid">
     <%= simple_form_for @trip do |f| %>
       <%= f.input :date, start_year: Date.today.year - 3, end_year: Date.today.year %>
       <%= f.input :time %>
 
-
-      <btn class="btn" id="getweather" data-stormglass-api-key="<%= ENV['STORMGLASS_API_KEY'] %>">🌊 Get My Weather 🏄‍♂️</btn>
+      <btn class="btn btn-secondary" id="getweather" data-stormglass-api-key="<%= ENV['STORMGLASS_API_KEY'] %>"> Get My Weather </btn>
        <%= f.input :longitude, as: :hidden %>
       <%= f.input :latitude, as: :hidden %>
 
-      <div class="row">
+      <div class="row", id="row_test">
          <div class="col-sm">
             <%= f.input :wave_height, label: 'Wave heigt in m:' %>
           </div>
@@ -35,7 +34,7 @@
            <%= f.input :wave_length, label: 'Wave period in s:'%>
         </div>
        </div>
-       <div class="row">
+       <div class="row", id="row_test_two">
          <div class="col-sm">
           <%= f.input :wind_speed, label: 'Wind speed in km/h:'%>
          </div>
@@ -43,26 +42,24 @@
            <%= f.input :wind_gusts, label: 'Wind gusts in km/h:' %>
           </div>
         </div>
-        <div class="row">
+        <div class="row", id="row_test_three">
             <div class="col-sm">
-             <%= f.input :air_temperature, label: 'Air temperature in C:'%>
+             <%= f.input :air_temperature, label: 'Air temp in C:'%>
             </div>
             <div class="col-sm">
-            <%= f.input :sea_temperature, label:'Water temperature in C:' %>
+            <%= f.input :sea_temperature, label:'Water temp in C:' %>
           </div>
         </div>
 
-
-
-      <%= f.button :submit, 'Save to Logbook', class: "btn-primary d-none" %>
-
+      <%= f.input :description, label: 'Logbook comments:' %>
+      <%= f.button :submit, 'Save to Logbook', class: "btn-primary d-none", id: "log_button" %>
     <% end %>
   </div>
 
 </div>
 
-
-<!--
+<!-- input_html: {class: "d-none"}
+ --><!--
  <div class="container">
     <div class="card card-white">
       <select id="city-input" class="select2"></select>
