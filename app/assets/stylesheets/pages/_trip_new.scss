@@ -9,16 +9,16 @@
 .new_container {
   display: flex;
   justify-content: space-around;
-  height: 1300px;
-  margin-top: 24px;
-  margin-left: 24px;
+  // height: 1300px;
+  // margin-top: 24px;
+  // margin-left: 24px;
 }
 
 .select_data {
   background-color: $color-3;
   color: white;
   width: 440px;
-  height: 650px;
+  // height: 650px;
 }
 
 #map_header {
@@ -27,9 +27,12 @@
   margin-top: 8px;
 }
 
-#getweather {
+.btn btn-secondary {
+  display:flex;
+  justify-content:center;
   color:white;
   text-style: bold;
   font-size: 150%;
+  border-radius: 5px;
 
 }
