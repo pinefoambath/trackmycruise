@@ -1,7 +1,4 @@
-@import 'animate/fadeInLeft';
-
 .btn-gradient {
-  @include animate(fadeInLeft, 1s);
   background-color: $color-3;
   color: $color-1;
   padding: 12px 32px;
