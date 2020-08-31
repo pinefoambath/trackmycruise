@@ -1,4 +1,7 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1565275999562-f4e66f3d4bde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80);">
+<!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1565275999562-f4e66f3d4bde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80);">
+ -->
+ <div class="home-video-wrapper">
+  <%= video_tag "flyover-ocean.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
   <div class="container">
     <h1>Get historical weather data for all your adventures.</h1>
     <p>Log and track retrospective weather data.</p>
@@ -10,19 +13,19 @@
 </div>
 
 <div class="container">
-  <div class="info-cards py-5">
+  <div class="info-cards pb-5">
     <div class="text-card">
-      <h2>Retrospective Weather</h2>
+      <h4>Retrospective Weather</h4>
       <p>The only site that tracks your
       weather retrospectively for all your trips.</p>
     </div>
     <div class="text-card">
-      <h2>High Accuracy Data</h2>
+      <h4>High Accuracy Data</h4>
       <p>Using the best quality data to bring
       you the best quality logs.</p>
     </div>
     <div class="text-card">
-      <h2>Ease of Use</h2>
+      <h4>Ease of Use</h4>
       <p>Keeping all your trips in your
       logbook to easily view and update
       whenever you need.</p>

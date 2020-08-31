@@ -12,6 +12,10 @@
   width : 20%;
 }
 
+.nav-item:hover {
+  animation: pulse;
+}
+
 .nav-link {
   width: 120px;
 }
