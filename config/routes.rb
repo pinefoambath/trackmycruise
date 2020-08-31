@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :update, :destroy]
   resources :trips, only: [:index, :show, :new, :create, :destroy, :update]
 
   get 'trips/:id/edit', to: 'trips#edit', as: 'edit_trip'
