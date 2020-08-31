@@ -5,6 +5,37 @@ body {
     flex-direction: column;
     background-color: $color-2;
 }
+
+.home-video-wrapper h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.home-video-wrapper p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
+.home_video {
+ width: 100vw;
+ height: 60vh;
+ position: absolute;
+ object-fit: cover;
+ top: 0;
+ z-index: -2;
+}
+.home-video-wrapper {
+height: 60vh;
+display: flex;
+padding: 150px 0;
+}
+
 .container {
     flex: 1;    /* same as flex-grow: 1; */
 }
