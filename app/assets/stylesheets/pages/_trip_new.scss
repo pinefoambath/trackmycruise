@@ -33,9 +33,12 @@
   margin-top: 8px;
 }
 
-#getweather {
+.btn-primary {
+  display: flex;
+  justify-content: center;
   color:white;
   text-style: bold;
   font-size: 150%;
+  border-radius: 8px;
 
 }
