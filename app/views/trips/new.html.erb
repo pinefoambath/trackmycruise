@@ -22,7 +22,7 @@
       <%= f.input :date, start_year: Date.today.year - 3, end_year: Date.today.year %>
       <%= f.input :time %>
 
-      <btn class="btn btn-primary" id="getweather" data-stormglass-api-key="<%= ENV['STORMGLASS_API_KEY'] %>"> Get My Weather </btn>
+      <btn class="btn btn-secondary" id="getweather" data-stormglass-api-key="<%= ENV['STORMGLASS_API_KEY'] %>"> Get My Weather </btn>
        <%= f.input :longitude, as: :hidden %>
       <%= f.input :latitude, as: :hidden %>
 
