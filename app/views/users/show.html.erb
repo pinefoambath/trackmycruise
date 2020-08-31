@@ -1,8 +1,11 @@
-<h1>My trips</h1>
+
+<h1>edit</h1>
+
+<!-- <h1>My trips</h1>
 <div class="container">
   <div class="all_trip mb-3">
-    <% if @user.trips.size > 0 %>
-        <% @user.trips.order(created_at: :asc).each do |trip| %>
+    <%# if @user.trips.size > 0 %>
+        <%# @user.trips.order(created_at: :asc).each do |trip| %>
             <div class="card mb-3" style="width: 18rem;">
               <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
               <div class="card-body">
@@ -19,7 +22,7 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-<%=trip.id %>">
                    Update
                 </button>
-            </div> 
+            </div>
           </div>
           <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered boardal" role="document">
@@ -31,7 +34,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <%= render "trips/edit", trip: trip  %>
+                  <%#= render "trips/edit", trip: trip  %>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -39,9 +42,10 @@
               </div>
             </div>
           </div>
-        <% end %>
-    <% else %>
+        <%# end %>
+    <%# else %>
         <p>You've not logged any trips yet.</p>
-    <% end %>
+    <%# end %>
   </div>
 </div>
+ -->
