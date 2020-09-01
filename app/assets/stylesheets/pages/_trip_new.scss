@@ -1,7 +1,7 @@
 .map_new {
   display: flex;
-  width: 800px;
-  height: 650px;
+  width: 700px;
+  height: 550px;
   background-color: $color-2;
   color: white;
 }
@@ -9,9 +9,10 @@
 .new_container {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   height: 1300px;
   margin-top: 24px;
-  margin-left: 24px;
+  margin-left: 124px;
 }
 
 .select_data {
@@ -19,6 +20,11 @@
   color: white;
   width: 440px;
   height: 650px;
+  border-radius: 5px;
+  padding: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+
 }
 
 #map_header {
@@ -27,9 +33,13 @@
   margin-top: 8px;
 }
 
-#getweather {
+.btn-secondary {
+  display: flex;
+  background-color: #167FFB;
+  justify-content: center;
   color:white;
   text-style: bold;
-  font-size: 150%;
+  font-size: 100%;
+  border-radius: 8px;
 
 }

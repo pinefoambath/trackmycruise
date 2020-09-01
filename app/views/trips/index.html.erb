@@ -29,8 +29,7 @@
            
             <div class="pilot-measure2"><textarea rows="9" cols="34"> <%= trip.description %>
              </textarea>
-            </div>
-           
+            </div>        
               <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
           </div>
           <div class="pilot-measures" id="my-trip-card">         
@@ -43,20 +42,28 @@
           </div>
         </div>
       </div>
-      <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered boardal" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <%= render "trips/edit", trip: trip  %>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<!--       <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"> -->
+<!--         <div class="modal-dialog modal-dialog-centered boardal" role="document"> -->
+<!--           <div class="modal-content"> -->
+<!--             <div class="modal-header"> -->
+<!--               <h5 class="modal-title" id="exampleModalCenterTitle"></h5> -->
+<!--               <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+<!--                 <span aria-hidden="true">&times;</span> -->
+<!--               </button> -->
+<!--             </div> -->
+          <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered boardal" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <%= render "trips/edit", trip: trip  %>
+                </div>
+              </div>
             </div>
           </div>
         </div>

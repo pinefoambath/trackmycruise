@@ -36,6 +36,10 @@ const getweatherdata = () => {
       const year = document.getElementById('trip_date_1i');
       const hour = document.getElementById('trip_time_4i');
       const unixtime = new Date(`${year.value}-${month.value}-${day.value} ${hour.value}:00:00`).getTime()/1000;
+      const log_button =document.getElementById('log_button');
+      const row_test = document.getElementById('row_test');
+      const row_test_two = document.getElementById('row_test_two');
+      const row_test_three = document.getElementById('row_test_three');
       // debugger
       // var unixtime = Date.parse(`${day.value}-${month.value}-${year.value} ${hour.value}:00:00`).getTime()/1000;
       fetch(`https://api.stormglass.io/v2/weather/point?lat=${latitude}&lng=${longitude}&params=waveHeight,wavePeriod,windSpeed,gust,airTemperature,waterTemperature&start=${unixtime}&end=${unixtime}&key=${stormglassid.dataset.stormglassApiKey}`)
@@ -43,7 +47,15 @@ const getweatherdata = () => {
       .then((data) => {
         // console.log(data);
         displayinfo(data);
-        document.querySelector('.btn-primary').classList.remove('d-none');
+        log_button.classList.remove('d-none');
+        log_button.classList.add('animated');
+        log_button.classList.add('rubberBand');
+        row_test.classList.add('animated');
+        row_test.classList.add('rubberBand');
+        row_test_two.classList.add('animated');
+        row_test_two.classList.add('rubberBand');
+        row_test_three.classList.add('animated');
+        row_test_three.classList.add('rubberBand');
         document.querySelector('.text-muted').classList.remove('d-none');
         document.getElementById('trip_description').classList.remove('d-none');
         // document.getElementById()
