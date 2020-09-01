@@ -1,9 +1,17 @@
+#new-trip-container {
+  color: white;
+}
+
 .map_new {
   display: flex;
   width: 700px;
   height: 550px;
   background-color: $color-2;
   color: white;
+}
+.coordinates {
+  background-color: $color-1;
+  color: $color-3;
 }
 
 .new_container {
