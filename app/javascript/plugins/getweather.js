@@ -39,6 +39,7 @@ const getweatherdata = () => {
       const year = fp.currentYear;
       const hour = document.getElementById('trip_time_4i');
       const unixtime = new Date(`${year}-${month}-${day} ${hour.value}:00:00`).getTime()/1000;
+      console.log(unixtime)
       const log_button =document.getElementById('log_button');
       const row_test = document.getElementById('row_test');
       const row_test_two = document.getElementById('row_test_two');
