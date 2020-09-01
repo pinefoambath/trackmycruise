@@ -7,6 +7,7 @@ body {
 }
 .container {
     flex: 1;    /* same as flex-grow: 1; */
+    background-position-x: center;
 }
 
 .info-cards {

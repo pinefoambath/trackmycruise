@@ -1,53 +1,68 @@
-<div class="container index-text">
-  <div class="pt-5">
-    <h1>My trips</h1>
-  </div>
-  <div class="all_trip mt-0">
-    <% if @user.trips.size > 0 %>
-        <% @user.trips.order(created_at: :asc).each do |trip| %>
-            <div class="card m-4">
-              <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
-              <div class="card-body" id="my-trip-card">
-                <p>Date: <b><%= trip.date %></b></p>
-                <p>Location longitude and latitude <b><%= trip.longitude %></b>,<b><%= trip.latitude %></b></p>
-                <p>Wave height: <b><%= trip.wave_height %></b></p>
-                <p>Wave length: <b><%= trip.wave_length %></b></p>
-                <p>Wind speed: <b><%= trip.wind_speed %></b></p>
-                <p>Air temperature: <b><%= trip.air_temperature %></b></p>
-                <p>Sea temperature: <b><%= trip.sea_temperature %></b></p>
-                <p>Logbook entry: <b><%= trip.description %></b></p>
-                <div class="button-update text-center">
-                  <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modal-<%=trip.id %>">
-                     Update
-                  </button>
-                </div>
-              </div>
-              <div class="delete-link text-center mb-2">
-                <%= link_to 'delete trip', trip_path(trip), method: :delete %>
-              </div>
+<div class="h1-centered">
+  <h1>My Trips</h1>
+</div>
+<div class="pilot-main-container mt-3 mb-3">
+  <% if @user.trips.size > 0 %>
+    <% @user.trips.order(created_at: :asc).each do |trip| %>
+      <div class="pilot-container">
+        <div class="pilot-img mt-0">
+          <% if  trip.photo.attached? %>
+            <%= cl_image_tag trip.photo.key, height:321, crop: :fill %>
+          <% else %>
+          <img src="https://images.unsplash.com/photo-1454789476662-53eb23ba5907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80" height="300">
+          <% end %>
+          <div class="pilot-btn">
+            <div class="pilot-primary w-50">
+              <button type="button " class="btn btn btn-success btn-block" data-toggle="modal" data-target="#modal-<%=trip.id %>">
+                Update Card
+              </button>
             </div>
-          <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered boardal" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <%= render "trips/edit", trip: trip  %>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                </div>
-              </div>
+            <div class="delete-link text-center w-50">
+              <%= link_to 'Delete Card', trip_path(trip), method: :delete, class:"btn btn-success btn-block" %> 
             </div>
           </div>
-        <% end %>
-    <% else %>
-        <p>You've not logged any trips yet.</p>
+        </div>
+        <div class='pilot-content'>
+          <div class='pilot-details'>
+            <div class="pilot-measure"><p> Date: <b><%= trip.date %></b> </p> </div>
+            <div class="pilot-measure"><p> Longatude and latitude <b><%= trip.longitude %></b>,<b><%= trip.latitude%></b></div>
+           
+            <div class="pilot-measure2"><textarea rows="9" cols="34"> <%= trip.description %>
+             </textarea>
+            </div>
+           
+              <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
+          </div>
+          <div class="pilot-measures" id="my-trip-card">         
+            <div class="pilot-measure"><p> <h6> Wave height: <b><%= trip.wave_height %>m</b> </h6> </p></div>
+            <div class="pilot-measure"><p> <h6>Wave length: <b><%= trip.wave_length %>m</b> </h6> </p></div>
+            <div class="pilot-measure"><p><h6> Wind speed: <b><%= trip.wind_speed %>km/h</b> </h6> </p></div>
+            <div class="pilot-measure"><p> <h6> Air temperature: <b><%= trip.air_temperature %>℃</b></h6></p></div>
+            <div class="pilot-measure"><p><h6> Sea temperature: <b><%= trip.sea_temperature %>℃</b></h6></p></div>
+            <div class="pilot-measure"><p><h6>  This is wind gust <h6></p></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered boardal" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= render "trips/edit", trip: trip  %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </div>
+  <% else %>
+      <p>You've not logged any trips yet.</p>
+  <% end %>
 </div>
