@@ -1,4 +1,8 @@
 import $ from 'jquery';
+import flatpickr from "flatpickr";
+
+const fp = flatpickr("#trip_date", {
+}); // flatpickr
 
 const displayinfo = (data) => {
   const wave_height = document.getElementById('trip_wave_height');
@@ -20,6 +24,7 @@ const displayinfo = (data) => {
   long.value = localStorage.longitude;
 };
 
+
 const getweatherdata = () => {
   console.log('hello');
   const stormglassid = document.getElementById('getweather');
@@ -29,11 +34,11 @@ const getweatherdata = () => {
       console.log(event.currentTarget);
       const latitude = localStorage.latitude
       const longitude = localStorage.longitude
-      const day = document.getElementById('trip_date_3i');
-      const month = document.getElementById('trip_date_2i');
-      const year = document.getElementById('trip_date_1i');
+      const day = fp.currentDay;
+      const month = fp.currentMonth;
+      const year = fp.currentYear;
       const hour = document.getElementById('trip_time_4i');
-      const unixtime = new Date(`${year.value}-${month.value}-${day.value} ${hour.value}:00:00`).getTime()/1000;
+      const unixtime = new Date(`${year}-${month}-${day} ${hour.value}:00:00`).getTime()/1000;
       const log_button =document.getElementById('log_button');
       const row_test = document.getElementById('row_test');
       const row_test_two = document.getElementById('row_test_two');
