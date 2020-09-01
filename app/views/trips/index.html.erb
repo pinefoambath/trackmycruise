@@ -4,13 +4,16 @@
 <div class="pilot-main-container mt-3 mb-3">
   <% if @user.trips.size > 0 %>
     <% @user.trips.order(created_at: :asc).each do |trip| %>
-      <div class="pilot-container">
-        <div class="pilot-img mt-0">
-          <% if  trip.photo.attached? %>
-            <%= cl_image_tag trip.photo.key, height:321, crop: :fill %>
-          <% else %>
-          <img src="https://images.unsplash.com/photo-1454789476662-53eb23ba5907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80" height="300">
-          <% end %>
+      <div class="pilot-container mt-0">
+        <div>
+          <div class="pilot-img">
+            <% if  trip.photo.attached? %>
+                <%= cl_image_tag trip.photo.key, height:321, crop: :fill %>
+            <% else %>
+              <img src="https://images.unsplash.com/photo-1454789476662-53eb23ba5907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80" height="321">
+            
+            <% end %>
+          </div>  
           <div class="pilot-btn">
             <div class="pilot-primary w-50">
               <button type="button " class="btn btn btn-success btn-block" data-toggle="modal" data-target="#modal-<%=trip.id %>">
@@ -21,16 +24,12 @@
               <%= link_to 'Delete Card', trip_path(trip), method: :delete, class:"btn btn-success btn-block" %> 
             </div>
           </div>
-        </div>
+        </div>  
         <div class='pilot-content'>
           <div class='pilot-details'>
             <div class="pilot-measure"><p> Date: <b><%= trip.date %></b> </p> </div>
             <div class="pilot-measure"><p> Longatude and latitude <b><%= trip.longitude %></b>,<b><%= trip.latitude%></b></div>
-           
-            <div class="pilot-measure2"><textarea rows="9" cols="34"> <%= trip.description %>
-             </textarea>
-            </div>        
-              <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
+            <div class="pilot-measure2"> <textarea class="w-100" rows="9" cols="34"> <%= trip.description %> </textarea> </div>                                        
           </div>
           <div class="pilot-measures" id="my-trip-card">         
             <div class="pilot-measure"><p> <h6> Wave height: <b><%= trip.wave_height %>m</b> </h6> </p></div>
@@ -42,32 +41,21 @@
           </div>
         </div>
       </div>
-<!--       <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"> -->
-<!--         <div class="modal-dialog modal-dialog-centered boardal" role="document"> -->
-<!--           <div class="modal-content"> -->
-<!--             <div class="modal-header"> -->
-<!--               <h5 class="modal-title" id="exampleModalCenterTitle"></h5> -->
-<!--               <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
-<!--                 <span aria-hidden="true">&times;</span> -->
-<!--               </button> -->
-<!--             </div> -->
-          <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered boardal" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <%= render "trips/edit", trip: trip  %>
-                </div>
-              </div>
+      <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered boardal" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= render "trips/edit", trip: trip  %>
             </div>
           </div>
         </div>
-      </div>
+      </div>    
     <% end %>
   <% else %>
       <p>You've not logged any trips yet.</p>
