@@ -1,7 +1,5 @@
 import $ from 'jquery';
 
-
-
 const displayinfo = (data) => {
   const wave_height = document.getElementById('trip_wave_height');
   const wave_length = document.getElementById('trip_wave_length');
