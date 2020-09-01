@@ -7,11 +7,38 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  height : 20%;
-  width : 20%;
+.nav-item:hover {
+  animation: pulse;
 }
 
 .nav-link {
-  width: 100px;
+  width: 120px;
 }
+
+.adj-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .adj-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar-lewagon .navbar-brand img {
+    height: 100%;
+    width: 75%;
+  }
+}
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .navbar-lewagon .navbar-brand img {
+    height : 100%;
+    width : 20%;
+  }
+}
+
+

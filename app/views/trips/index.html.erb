@@ -4,7 +4,7 @@
   </div>
   <div class="all_trip mt-0">
     <% if @user.trips.size > 0 %>
-        <% @user.trips.order(created_at: :asc).each do |trip| %>
+        <% @user.trips.order(date: :desc).each do |trip| %>
             <div class="card m-4">
               <%# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> %>
               <div class="card-body" id="my-trip-card">
