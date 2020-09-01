@@ -33,10 +33,9 @@
       <% end %>
 
 
-      <p> <%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-      <%= link_to "Home", root_path %>
-      <%= link_to 'Download my trips data', export_path(format: "csv") %>
+      <p> <%= link_to "Home", root_path %><p>
+      <p><%= link_to 'Download my trips data', export_path(format: "csv") %><p>
+      <p> <%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "This will delete your user account and all associated data. Please confirm by clicking OK" }, method: :delete %></p>
     </div>
   </div>
 </div>
