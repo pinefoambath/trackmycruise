@@ -1,7 +1,7 @@
 <!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1565275999562-f4e66f3d4bde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80);">
  -->
  <div class="home-video-wrapper">
-  <%= video_tag "flyover-ocean.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
+  <%= video_tag "#{asset_path 'flyover-ocean.mp4'}", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
   <div class="container">
     <h1>Get historical weather data for all your adventures.</h1>
     <p>Log and track retrospective weather data.</p>
@@ -31,6 +31,16 @@
     </div>
   </div>
 </div>
+
+<div class="container" id="test_container"></div>
+  <div class="info-cards pb-5">
+      <div class="text-card" pb-5>
+            <h4>Retrospective Weather</h4>
+            <p>Had a great day out on the water? Let us show you the past weather - wave height, wind speed - for dates and times in the past, allowing you to review your sailing or surf experiences.</p>
+        </div>
+      </div>
+<div class="container" id="test_container_two"></div>
+
 
 
 </div>
