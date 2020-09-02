@@ -24,7 +24,6 @@
       <btn class="animated bounceInDown btn btn-new-trip mt-3" data-toggle="modal" data-target="#exampleModal" id="getweather" data-stormglass-api-key="<%= ENV['STORMGLASS_API_KEY'] %>"> Get My Weather </btn>
        <%= f.input :longitude, as: :hidden %>
        <%= f.input :latitude, as: :hidden %>
-    <% end %>
   </div>
 </div>
 
@@ -39,7 +38,6 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for @trip do |f| %>
           <div class="row", id="row_test">
              <div class="col-sm">
                 <%= f.input :wave_height, label: 'Wave heigt in m:' %>
