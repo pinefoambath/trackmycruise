@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     display: flex;
     min-height: 100vh;
@@ -49,6 +53,98 @@ padding: 150px 0;
 .text-card {
   text-align: center;
   color: $color-1;
+  border: 1px solid black;
+
+}
+
+.icon {
+  width: 60px;
+  margin-bottom: 8px;
+  margin-top: 16px;
+}
+
+.icon:before {
+  background-color: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.4));
+}
+
+.long_card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: centre;
+  color: white;
+  font-size: 20px;
+}
+
+.icon_large {
+  width: 200px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+#red_card {
+  background-color: #ee6f57;
+}
+
+#top_card {
+  background-color: #145374;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+#bottom_card {
+  background-color: #145374;
+  margin-bottom: 30px;
+}
+
+#middle_card {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: right;
+}
+
+.no-underline {
+  text-decoration: none;
+  &:hover {
+    text-decoration:none;
+    color: #ee6f57;
+  }
+  }
+
+#text-right {
+  margin-right: 160px;
+}
+
+#text-left{
+  margin-right: 160px;
+}
+
+
+.title_p {
+  font-size:20px;
+
+}
+
+#title_text {
+  font-size: 40px;
+}
+
+.long_card_text_left {
+  margin-right: 50px;
+
+}
+
+.long_card_text_right {
+  margin-left: 50px;
+}
+
+.divider {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon_small {
+  width: 40px;
 }
 
 // Smallest device
