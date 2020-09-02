@@ -1,9 +1,9 @@
 <!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1565275999562-f4e66f3d4bde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80);">
  -->
  <div class="home-video-wrapper">
-  <%= video_tag "flyover-ocean.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
+  <%= video_tag "flyover-ocean.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, playsinline: :playsinline, class: "home_video" %>
   <div class="container">
-    <h1>Get historical weather data for all your adventures.</h1>
+    <h1 id="title_text">Get historical weather data for your marine adventures.</h1>
     <p>Log and track retrospective weather data.</p>
     <div class="animated fadeInLeft">
       <%= link_to "Track now",
@@ -13,23 +13,83 @@
 </div>
 <div class="container">
   <div class="info-cards pb-5">
-    <div class="text-card">
-      <h4>Retrospective Weather</h4>
-      <p>Had a great day out on the water? Let us show you the past weather - wave height, wind speed - for dates and times in the past, allowing you to review your sailing or surf experiences.</p>
+    <a href="#card_1" class="no-underline">
+      <div class="text-card" >
+        <img src="/assets/wind_icon_red_white.png" class="icon">
+        <p class="title_p">Retrospective Weather Info</p>
+        <!-- <p>Had a great day out on the water? Let us show you the past weather - wave height, wind speed - for dates and times in the past, allowing you to review your sailing or surf experiences.</p> -->
+      </div>
+    </a>
+    <a href="#card_2" class="no-underline">
+      <div class="text-card">
+        <img src="/assets/satellite_red_white.png" class="icon">
+        <p class="title_p">High Accuracy Data</p>
+        <!-- <p>We use the best quality marine weather data provided by NOAA to bring -->
+        <!-- you the best quality logs.</p> -->
+      </div>
+    </a>
+    <a href="#card_3" class="no-underline">
+      <div class="text-card">
+        <img src="/assets/dashboard_red_white.png" class="icon">
+        <p class="title_p">Keep a Weather Logbook</p>
+        <!-- <p>Keep all your trips in an online -->
+        <!-- logbook to easily view and update -->
+        <!-- whenever you need.</p> -->
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="container" id="top_card">
+      <a id="card_1"></a>
+  <div class="long_card">
+    <div class="long_card_text_left">
+      <h2>Retrospective Marine Weather</h2>
+
+      <p class="text_right"> Had a great day out on the water, sailing or surfing? Track my Cruise lets you review the weather you had during your trip. Select a map a location, a date and a time, and we’ll show you what the marine weather was like at the time. </p>
     </div>
-    <div class="text-card">
-      <h4>High Accuracy Data</h4>
-      <p>We use the best quality marine weather data provided by NOAA to bring
-      you the best quality logs.</p>
-    </div>
-    <div class="text-card">
-      <h4>Integrated Logbook</h4>
-      <p>Keep all your trips in an online
-      logbook to easily view and update
-      whenever you need.</p>
+
+    <div class=container>
+      <img src="/assets/wind_icon_white.png" class="icon_large">
     </div>
   </div>
 </div>
 
+<div class="divider">
+   <img src="/assets/wave_red.png" class="icon_small">
+</div>
+
+<div class="container" id="middle_card">
+  <div class="long_card">
+    <div class=container>
+       <a id="card_2"></a>
+      <img src="/assets/satellite_white.png" class="icon_large">
+    </div>
+    <div class="long_card_text_right">
+      <h2>High Accuracy Data</h2>
+      <p> We show you the best quality marine weather data provided by NOAA to make sure you have the best quality log data for recording wave height, wave period, wind speed, wind gusts, air temperature and sea temperature.
+</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider">
+   <img src="/assets/wave_red.png" class="icon_small">
+</div>
+
+<div class="container"  id="bottom_card">
+  <div class="long_card">
+    <div class="long_card_text_left">
+      <h2>Keep a Weather Logbook</h2>
+       <a id="card_3"></a>
+      <p> Keep a record of the easiest and most challenging weather conditions you’ve experienced at sea. Save your past weather and trip data, including pictures, all in one place. Export your trip data and reuse elsewhere.
+</p>
+    </div>
+    <div class=container>
+      <img src="/assets/dashboard_white.png" class="icon_large">
+    </div>
+  </div>
+</div>
 
 </div>
