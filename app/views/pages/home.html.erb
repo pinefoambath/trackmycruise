@@ -15,14 +15,14 @@
   <div class="info-cards pb-5">
     <a href="#card_1" class="no-underline">
       <div class="text-card" >
-        <img src="/assets/wind_icon_red_white.png" class="icon">
+        <%= image_tag "wind_icon_red_white", class: "icon" %>
         <p class="title_p">Retrospective Weather Info</p>
         <!-- <p>Had a great day out on the water? Let us show you the past weather - wave height, wind speed - for dates and times in the past, allowing you to review your sailing or surf experiences.</p> -->
       </div>
     </a>
     <a href="#card_2" class="no-underline">
       <div class="text-card">
-        <img src="/assets/satellite_red_white.png" class="icon">
+        <%= image_tag "satellite_red_white", class: "icon" %>
         <p class="title_p">High Accuracy Data</p>
         <!-- <p>We use the best quality marine weather data provided by NOAA to bring -->
         <!-- you the best quality logs.</p> -->
@@ -30,7 +30,7 @@
     </a>
     <a href="#card_3" class="no-underline">
       <div class="text-card">
-        <img src="/assets/dashboard_red_white.png" class="icon">
+        <%= image_tag "dashboard_red_white", class: "icon" %>
         <p class="title_p">Keep a Weather Logbook</p>
         <!-- <p>Keep all your trips in an online -->
         <!-- logbook to easily view and update -->
@@ -50,20 +50,20 @@
     </div>
 
     <div class=container>
-      <img src="/assets/wind_icon_white.png" class="icon_large">
+      <%= image_tag "wind_icon_white", class: "icon_large" %>
     </div>
   </div>
 </div>
 
 <div class="divider">
-   <img src="/assets/wave_red.png" class="icon_small">
+   <%= image_tag "wave_red", class: "icon_small" %>
 </div>
 
 <div class="container" id="middle_card">
   <div class="long_card">
     <div class=container>
        <a id="card_2"></a>
-      <img src="/assets/satellite_white.png" class="icon_large">
+       <%= image_tag "satellite_white", class: "icon_large" %>
     </div>
     <div class="long_card_text_right">
       <h2>High Accuracy Data</h2>
@@ -75,7 +75,7 @@
 </div>
 
 <div class="divider">
-   <img src="/assets/wave_red.png" class="icon_small">
+   <%= image_tag "wave_red", class: "icon_small" %>
 </div>
 
 <div class="container"  id="bottom_card">
@@ -87,7 +87,7 @@
 </p>
     </div>
     <div class=container>
-      <img src="/assets/dashboard_white.png" class="icon_large">
+      <%= image_tag "dashboard_white", class: "icon_large" %>
     </div>
   </div>
 </div>
