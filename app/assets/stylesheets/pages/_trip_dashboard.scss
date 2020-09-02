@@ -10,10 +10,22 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.card {
-  border-radius: 20px;
-  display: flex;
-  // justify-content: space-between;
-  width: 500px;
-  flex-direction: column;
+
+.card-image {
+  position: relative;
+  a {
+    position: absolute;
+    bottom: 8px;
+    left: 24px;
+    right: 24px;
+    border: 1px solid white;
+    color: white;
+  }
 }
+// .card {
+//   border-radius: 20px;
+//   display: flex;
+//   // justify-content: space-between;
+//   width: 500px;
+//   flex-direction: column;
+// }

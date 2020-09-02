@@ -13,7 +13,7 @@
                 <li> Air temperature <%= @trip.air_temperature %> °C and water teperature <%= @trip.sea_temperature %>°C </li>
             </ul>
         </div>
-       
+            <%= f.button :submit, 'Save to Logbook', class: "btn-primary d-none" %>
             <a class="btn btn-primary" href="#" role="button">Add To Logbook</a>
 
             <%# <a href="#" id="social-media-popover" class="btn btn-primary" rel="popover">Share</a> %>
