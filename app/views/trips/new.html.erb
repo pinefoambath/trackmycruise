@@ -1,84 +1,76 @@
-<div class="container" id="map_header">
-  <h1>Get past sailing weather</h1>
-  <h4>① Pick a location on the map, ② pick a past time and date and ③ let us get your weather</h4>
-</div>
-
-
-<div class="new_container">
-  <div class="map_new">
-    <div class="container">
-
-      <div id="map"
-           style="width: 100%; height: 600px;"
-           data-markers="<%= @markers.to_json %>"
-           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-      <pre id="coordinates" class="coordinates"></pre>
-
+<div class="container mt-3" id="new-trip-container">
+  <div>
+    <h1>Get past sailing weather</h1>
+    <div class="justify-content-center">
+      <h5>① Select a past time and date. ② Drag the marker to a location on the map. ③ Click the get your weather button!</h5>
     </div>
   </div>
-  <div class="select_data container-fluid">
+
+  <div class="date-select">
     <%= simple_form_for @trip do |f| %>
-      <%= f.input :date, start_year: Date.today.year - 3, end_year: Date.today.year %>
-      <%= f.input :time %>
+      <div class="row justify-content-center">
+        <div class="input-date-time"><%= f.input :date, label: "Pick a date", as: :string, input_html: {class: "datepicker"} %></div>
+        <div class="input-date-time"><%= f.input :time, :minute_step => 60 %></div>
+      </div>
+      <div class="map">
+        <div id="map"
+               style="width: 100%; height: 500px;"
+               data-markers="<%= @markers.to_json %>"
+               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+          <pre id="coordinates" class="coordinates"></pre>
+      </div>
 
-      <btn class="btn btn-secondary" id="getweather" data-stormglass-api-key="<%= ENV['STORMGLASS_API_KEY'] %>"> Get My Weather </btn>
+      <btn class="animated bounceInDown btn btn-new-trip mt-3" data-toggle="modal" data-target="#exampleModal" id="getweather" data-stormglass-api-key="<%= ENV['STORMGLASS_API_KEY'] %>"> Get My Weather </btn>
        <%= f.input :longitude, as: :hidden %>
-      <%= f.input :latitude, as: :hidden %>
-
-      <div class="row", id="row_test">
-         <div class="col-sm">
-            <%= f.input :wave_height, label: 'Wave heigt in m:' %>
-          </div>
-        <div class="col-sm">
-           <%= f.input :wave_length, label: 'Wave period in s:'%>
-        </div>
-       </div>
-       <div class="row", id="row_test_two">
-         <div class="col-sm">
-          <%= f.input :wind_speed, label: 'Wind speed in km/h:'%>
-         </div>
-         <div class="col-sm">
-           <%= f.input :wind_gusts, label: 'Wind gusts in km/h:' %>
-          </div>
-        </div>
-        <div class="row", id="row_test_three">
-            <div class="col-sm">
-             <%= f.input :air_temperature, label: 'Air temp in C:'%>
-            </div>
-            <div class="col-sm">
-            <%= f.input :sea_temperature, label:'Water temp in C:' %>
-          </div>
-        </div>
-
-      <%= f.input :description, label: 'Logbook comments:' %>
-      <%= f.button :submit, 'Save to Logbook', class: "btn-primary d-none", id: "log_button" %>
-    <% end %>
+       <%= f.input :latitude, as: :hidden %>
   </div>
-
 </div>
 
-<!-- input_html: {class: "d-none"}
- --><!--
- <div class="container">
-    <div class="card card-white">
-      <select id="city-input" class="select2"></select>
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city"> -->
-        <!-- <input type="submit" value="Submit" id="button" width=200px> -->
-    <!-- </div> -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Here is your weather:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="row", id="row_test">
+             <div class="col-sm">
+                <%= f.input :wave_height, label: 'Wave heigt in m:' %>
+              </div>
+            <div class="col-sm">
+               <%= f.input :wave_length, label: 'Wave period in s:'%>
+            </div>
+           </div>
+           <div class="row", id="row_test_two">
+             <div class="col-sm">
+              <%= f.input :wind_speed, label: 'Wind speed in km/h:'%>
+             </div>
+             <div class="col-sm">
+               <%= f.input :wind_gusts, label: 'Wind gusts in km/h:' %>
+              </div>
+            </div>
+            <div class="row", id="row_test_three">
+                <div class="col-sm">
+                 <%= f.input :air_temperature, label: 'Air temp in C:'%>
+                </div>
+                <div class="col-sm">
+                <%= f.input :sea_temperature, label:'Water temp in C:' %>
+              </div>
+            </div>
 
-
-
-    <!-- <div class="card card-white"> -->
-      <!-- <h1 id="header">Weather in</h1>
-      <h2 id="date">Thursday, 6th August</h2>
-      <p id="condition"></p>
-       -->
-       <!-- <div id="bottom-row"> -->
-        <!-- <img id="weathericon"> -->
-        <!-- <h2 id="temperature"></h2> -->
-      <!-- </div> -->
-    <!-- </div> -->
-
+          <%= f.input :description, label: 'Logbook comments:' %>
+          <%= f.button :submit, 'Save to Logbook', class: "btn-primary d-none", id: "log_button" %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
