@@ -1,3 +1,5 @@
+require 'csv'
+
 class TripsController < ApplicationController
 
   def index
@@ -40,10 +42,25 @@ class TripsController < ApplicationController
     redirect_to trips_path
   end
 
-  private
+  def export
+    @trips = current_user.trips
+    csv_file = CSV.generate do |csv|
+      csv << ["date", "logbook_entry", "wave_height", "wave_length", "wind_speed", "wind_gusts", "air_temperature", "water_temperature"]
+      @trips.each do |trip|
+        csv << [trip.date, trip.description, trip.wave_height, trip.wave_length, trip.wind_speed, trip.wind_gusts, trip.air_temperature, trip.sea_temperature]
+      end
 
+    end
+    # send_data csv_file, :type => 'text/csv; charset=iso-8859-1; header=present', :disposition => "attachment; filename=mytrips.csv"
+    send_data csv_file, filename: 'mytrips.csv'
+  end
+
+
+
+  private
+  
     def strong_params
-      params.require(:trip).permit(:date, :time, :longitude, :latitude, :wave_length, :wave_height, :air_temperature, :sea_temperature, :wind_speed, :wind_direction, :wind_gusts, :type, :description)
+      params.require(:trip).permit(:date, :time, :longitude, :latitude, :wave_length, :wave_height, :air_temperature, :sea_temperature, :wind_speed, :wind_direction, :wind_gusts, :type, :description, :photo)
     end
 
 

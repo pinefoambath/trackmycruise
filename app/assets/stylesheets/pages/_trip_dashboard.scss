@@ -2,17 +2,18 @@
   background-color: white;
   margin: 8px 24px 8px 0px;
   padding: 8px;
-  width: 400px;
+  width: 500px;
 }
 .all_trip {
   display: flex;
-  column-gap: 5px;
+  // column-gap: 5px;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 .card {
   border-radius: 20px;
   display: flex;
-  justify-content: space-between;
-  width: 400px;
+  // justify-content: space-between;
+  width: 500px;
+  flex-direction: column;
 }
