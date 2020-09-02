@@ -1,9 +1,22 @@
+#new-trip-container {
+  color: white;
+}
+
+#log_button {
+  background-color: $color-3;
+  border-color: white;
+}
+
 .map_new {
   display: flex;
   width: 700px;
   height: 550px;
   background-color: $color-2;
   color: white;
+}
+.coordinates {
+  background-color: $color-1;
+  color: $color-3;
 }
 
 .new_container {
@@ -33,13 +46,21 @@
   margin-top: 8px;
 }
 
-.btn-secondary {
+.btn-new-trip {
   display: flex;
-  background-color: #167FFB;
+  background-color: $color-3;
   justify-content: center;
+  vertical-align: middle;
   color:white;
   text-style: bold;
   font-size: 100%;
-  border-radius: 8px;
+  border-radius: 16px;
+}
+.btn-new-trip:hover {
+  background-color: white;
+  color: $color-3;
+}
+
+.date-select {
 
 }
