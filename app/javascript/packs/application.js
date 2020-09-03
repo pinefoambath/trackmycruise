@@ -76,3 +76,10 @@ document.addEventListener('turbolinks:load', () => {
 //   }
 // }
 // </script>
+
+// var confirmed = $('.simpleConfirm').confirm('Are you sure?');
+// if(confirmed) { 
+//   /* do something when user clicks 'ok' */ 
+// } else {
+//  /* optionally do something else when user clicks 'cancel' */ 
+// }
