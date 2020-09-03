@@ -64,4 +64,15 @@ document.addEventListener('turbolinks:load', () => {
 //               '<button type="button" id="close" onclick="$(&quot;#example&quot;).popover(&quot;hide&quot;);">&times;</button>',
 //       content: 'test'
 //   });
-// });
+// // });
+// <script>
+// // Get the modal
+// var modal = document.getElementById('id01');
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
+// </script>
