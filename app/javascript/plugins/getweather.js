@@ -44,6 +44,7 @@ const getweatherdata = () => {
       const day = dateObject.getDate();
       const month = fp.currentMonth;
       const year = fp.currentYear;
+      console.log(fp)
       const hour = document.getElementById('trip_time_4i');
       const unixtime = new Date(`${year}-${month}-${day} ${hour.value}:00:00`).getTime()/1000;
       const log_button =document.getElementById('log_button');
