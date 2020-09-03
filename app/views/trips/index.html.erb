@@ -1,6 +1,6 @@
 <div class="container">
-  <h1 class="centered mt-3 mb-3">My past trips</h1>
-  <div class="row mt-3">
+  <h1 class="centered mt-3 mb-5">My past trips</h1>
+  <div class="row mt-3 mb-5">
     <% if @user.trips.size > 0 %>
       <% @user.trips.order(created_at: :asc).each do |trip| %>
         <div class="col-6">
@@ -27,8 +27,10 @@
 
                   <div class="d-flex align-items-center mb-3">
                     <%= image_tag 'https://images.unsplash.com/photo-1593872222524-361daae4f782?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60', class: "avatar mr-2" %>
-                    <strong><%= trip.date %></strong>         
+                    <strong> <%= trip.date.strftime ("%A, %e, %b, %Y") %> </strong>
+                    
                   </div>   
+                  <p class="text-secondary"> <strong> How was your day been? </strong> </p>
                   <div class="text-container">              
                     <p> <%= trip.description %> </p>  
                   </div>               
