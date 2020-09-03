@@ -5,7 +5,7 @@
       <% @user.trips.order(created_at: :asc).each do |trip| %>
         <div class="col-6">
           <div class="card mb-3 custom-card">
-            <%= link_to trip_path(trip), method: :delete  do %> 
+            <%= link_to trip_path(trip), method: :delete  do %>
               <button type="button" class="close close-button-position" aria-label="Close">
                 <span aria-hidden="true">×</span>
               </button>
@@ -16,22 +16,22 @@
                   <%= cl_image_tag trip.photo.key, width: 230, height: 320, crop: "fill" %>
                 <% else %>
                   <img src="https://images.unsplash.com/photo-1454789476662-53eb23ba5907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80" width="230", height="320">
-                <% end %> 
+                <% end %>
 
                  <a class="btn" data-toggle="modal" data-target="#modal-<%=trip.id %>">
-                Update Trip 
-               </a>  
+                Update Trip
+               </a>
               </div>
               <div class="d-flex flex-column justify-content-between">
                 <div class="card-content p-3">
 
                   <div class="d-flex align-items-center mb-3">
                     <%= image_tag 'https://images.unsplash.com/photo-1593872222524-361daae4f782?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60', class: "avatar mr-2" %>
-                    <strong><%= trip.date %></strong>         
-                  </div>   
-                  <div class="text-container">              
-                    <p> <%= trip.description %> </p>  
-                  </div>               
+                    <strong><%= trip.date %></strong>
+                  </div>
+                  <div class="text-container">
+                    <p> <%= trip.description %> </p>
+                  </div>
                 </div>
                 <div class="text-info">
                   <div class="d-flex">
@@ -57,10 +57,10 @@
                     </div>
                   </div>
                 </div>
-              </div>             
-            </div>            
+              </div>
+            </div>
           </div>
-        </div>    
+        </div>
         <div class="modal fade" id="modal-<%=trip.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered boardal" role="document">
           <div class="modal-content">
@@ -75,11 +75,11 @@
             </div>
           </div>
         </div>
-      </div>       
-      <% end %>     
+      </div>
+      <% end %>
   </div>
   <% else %>
-        <p>You've not logged any trips yet.</p>
+        <p id="no-trips-p">You've not logged any trips yet.</p>
   <% end %>
 </div>
 
