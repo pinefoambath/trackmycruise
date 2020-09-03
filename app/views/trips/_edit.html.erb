@@ -1,6 +1,10 @@
 <%# <p>Update:</p> %>
-<%= form_for(trip) do |f| %>
+<%= simple_form_for trip do |f| %>
   <%= f.text_area :description, textinline: "text to render...", class: "w-100", :rows => 10 %>
-  <%= f.file_field :photo %>
-  <%= f.submit class: "btn-gradient mt-3" %>
+  <%# <%= f.input :photo, input_html: { class: 'hidden'} %> 
+  <%# <%= f.input :photo, input_html: { class: 'd-none photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload A Photo' %> 
+  <%= f.input :photo, input_html: {class: 'upload-photo'}, label: '📷 Upload A Photo' %>
+  <%= image_tag "", width: 300, class: "hidden photo-preview" %>
+  <br>
+  <%= f.submit  class: "btn-gradient mt-3" %>
 <% end %>
