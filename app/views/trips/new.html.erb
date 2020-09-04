@@ -1,8 +1,8 @@
 <div class="container mt-3" id="new-trip-container">
   <div>
     <h1>Get past sailing weather</h1>
-    <div class="justify-content-center">
-      <h5>① Select a past time and date. ② Drag the marker to a location on the map. ③ Click the get your weather button!</h5>
+    <div class="row justify-content-center">
+      <h5 class="animated fadeInLeft mr-5" id="new-h5-1">① Select a past time and date.</h5><h5 class="animated fadeInLeft" id="new-h5-2">② Drag the marker to a location on the map.</h5><h5 class="animated fadeInLeft ml-5" id="new-h5-3">③ Click the get your weather button!</h5>
     </div>
   </div>
 
@@ -21,7 +21,7 @@
           <pre id="coordinates" class="coordinates"></pre>
       </div>
 
-      <btn class="animated bounceInDown btn btn-new-trip mt-3" data-toggle="modal" data-target="#exampleModal" id="getweather" data-stormglass-api-key="<%= ENV['STORMGLASS_API_KEY'] %>"> Get My Weather </btn>
+      <btn class="animated fadeInLeft btn btn-new-trip mt-3" data-toggle="modal" data-target="#exampleModal" id="getweather" data-stormglass-api-key="<%= ENV['STORMGLASS_API_KEY'] %>"> Get My Weather </btn>
        <%= f.input :longitude, as: :hidden %>
        <%= f.input :latitude, as: :hidden %>
   </div>
