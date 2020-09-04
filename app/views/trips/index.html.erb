@@ -6,20 +6,20 @@
         <div class="col-6">
           <div class="card mb-3 custom-card">
 
-            <%= link_to trip_path(trip), method: :delete, data: {confirm: "Are you sure?"}  do %>
+            <%= link_to trip_path(trip), method: :delete, data: {confirm: "Do you want to delete that trip?"}  do %>
               <button type="button" class="close close-button-position" aria-label="Close">
                 <span aria-hidden="true">×</span>
               </button>
             <% end %>
             <div class="d-flex">
-              <div class="card-image mx-auto d-block">
+              <div class="card-image d-block">
                 <% if  trip.photo.attached? %>
                   <%= cl_image_tag trip.photo.key, width: 230, height: 320, crop: "fill" %>
                 <% else %>
-                  <img src="https://images.unsplash.com/photo-1454789476662-53eb23ba5907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80" width="230", height="320">
+                  <img src="https://images.unsplash.com/photo-1520116468816-95b69f847357?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" width="230", height="320">
                 <% end %>
 
-                 <a class="btn" data-toggle="modal" data-target="#modal-<%=trip.id %>">
+                 <a class="btn buttonop" data-toggle="modal" data-target="#modal-<%=trip.id %>">
                 Update Trip
                </a>
                
@@ -30,7 +30,7 @@
                   <div class="d-flex align-items-center mb-3">
                     <%= image_tag 'https://images.unsplash.com/photo-1593872222524-361daae4f782?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60', class: "avatar mr-2" %>
 
-                    <strong> <%= trip.date.strftime ("%A, %e, %b, %Y") %> </strong>
+                    <strong> <%= trip.date.strftime ("%A %e %b %Y") %> </strong>
 
                   </div>
                   <p class="text-secondary"> <strong> How was your day? </strong> </p>
@@ -39,18 +39,18 @@
                   </div>
                 </div>
                 <div class="text-info">
-                  <div class="d-flex">
+                  <div class="d-flex ">
                     <div class="bg-light border flex-grow-1 bg-gradient-light stat-text">
-                     <p> Wave height: <br> <b><%= trip.wave_height %>m</b> </p>
+                     <p> Wave height: <br> <b><%= trip.wave_height %> m</b> </p>
                     </div>
                     <div class="bg-light border flex-grow-1 stat-text">
-                      <p>Wave length: <b><%= trip.wave_length %>m</b> </p>
+                      <p>Wave length: <b><br><%= trip.wave_length %> m</b> </p>
                     </div>
                     <div class="bg-light border flex-grow-1 stat-text">
-                      <p> Wind speed: <b><%= trip.wind_speed %>km/h</b> </p>
+                      <p> Wind speed: <b><br><%= trip.wind_speed %> km/h</b> </p>
                     </div>
                   </div>
-                  <div class="d-flex">
+                  <div class="d-flex ">
                     <div class="bg-light border flex-grow-1 stat-text">
                      <p> Air temperature: <b><%= trip.air_temperature %>℃</b></p>
                     </div>
@@ -58,7 +58,7 @@
                       <p> Sea temperature: <b><%= trip.sea_temperature %>℃</b></p>
                     </div>
                     <div class="bg-light border flex-grow-1 stat-text-radius">
-                     <p>  Wind gusts:<b> <%= trip.wind_gusts %> km/h </b> </p>
+                     <p class="m-0">  Wind gusts: </p> <p class="m-0"> <b> <%= trip.wind_gusts %> km/h  </b> </p>
                     </div>
                   </div>
                 </div>
