@@ -22,6 +22,8 @@
 }
 .text-info{
     text-align: center;
+    width: 320px;
+   
 } 
 .text-info p {
     font-size: 12px;
@@ -39,6 +41,9 @@
 border-radius: 0px 0px 20px 0px;
 width: 33.33%;
 padding-top: 5px; 
+}
+.buttonop {
+    opacity: 0.9;
 }
 // display: grid;
 // grid-template-columns: 1fr; 
