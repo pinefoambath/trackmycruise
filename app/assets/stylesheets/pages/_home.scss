@@ -154,6 +154,46 @@ padding: 150px 0;
   .info-cards {
     grid-template-columns: 1fr;
   }
+
+  .long_card {
+    flex-direction: column;
+  }
+
+  #bottom_card {
+    text-align: centre;
+  }
+
+  .long_card_text_left {
+  margin-right: 16px;
+  margin-left: 16px;
+  }
+
+  .long_card_text_right {
+  margin-left: 16px;
+  margin-right: 16px;
+  }
+
+  .icon_large {
+  width: 100px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  }
+
+ #bottom_card {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  }
+
+  #top_card {
+  margin-top: 50px;
+  }
+
+
+
 }
 
 // Small devices (landscape phones, 576px and up)
