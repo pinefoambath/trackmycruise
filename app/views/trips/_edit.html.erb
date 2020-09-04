@@ -1,6 +1,6 @@
 <%# <p>Update:</p> %>
 <%= form_for(trip) do |f| %>
-  <%= f.text_area :description, textinline: "text to render...", class: "w-100", :rows => 10 %>
+  <%= f.text_area :description, textinline: "text to render...", class: "w-100", :rows => 10%>
   <%= f.file_field :photo %>
   <%= f.submit class: "btn-gradient mt-3" %>
 <% end %>
