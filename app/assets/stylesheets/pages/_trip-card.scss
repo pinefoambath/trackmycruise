@@ -43,7 +43,12 @@ width: 33.33%;
 padding-top: 5px; 
 }
 .buttonop {
-    opacity: 0.9;
+background: white;
+opacity: 0.5;
+border-radius: 10px;  
+}
+.buttonop:hover {
+    opacity: 0.7;
 }
 // display: grid;
 // grid-template-columns: 1fr; 
