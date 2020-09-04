@@ -3,7 +3,7 @@
   <div class="row mt-3 mb-5">
     <% if @user.trips.size > 0 %>
       <% @user.trips.order(date: :desc).each do |trip| %>
-        <div class="col-6">
+        <div class="col-md-12 col-lg-6">
           <div class="card mb-3 custom-card">
 
             <%= link_to trip_path(trip), method: :delete, data: {confirm: "Are you sure?"}  do %>
@@ -22,7 +22,7 @@
                  <a class="btn" data-toggle="modal" data-target="#modal-<%=trip.id %>">
                 Update Trip
                </a>
-               
+
               </div>
               <div class="d-flex flex-column justify-content-between">
                 <div class="card-content p-3">
