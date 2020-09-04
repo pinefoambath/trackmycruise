@@ -55,12 +55,23 @@
   text-style: bold;
   font-size: 100%;
   border-radius: 16px;
+  animation-duration: 2s;
+  animation-delay: 4s;
 }
 .btn-new-trip:hover {
   background-color: white;
   color: $color-3;
 }
 
-.date-select {
-
+#new-h5-1 {
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
+#new-h5-2 {
+  animation-duration: 2s;
+  animation-delay: 2s;
+}
+#new-h5-3 {
+  animation-duration: 2s;
+  animation-delay: 3s;
 }
