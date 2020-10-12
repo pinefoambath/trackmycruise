@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Rails app that utilises Stormglass and Mapbox API integration to allow you to select any maritime location worldwide, provide a date and time in the past two years, and returns the maritime weather (sea state 🌊, wind 💨, gusts 🌬) for that moment in time.
